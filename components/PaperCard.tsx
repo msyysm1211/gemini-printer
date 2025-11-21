@@ -25,11 +25,11 @@ export const PaperCard: React.FC<PaperCardProps> = ({ data, onUpdate, onDelete, 
 
   // Typewriter effect
   useEffect(() => {
-    let i = 0;
     setDisplayedText('');
+    let i = 0;
     const interval = setInterval(() => {
       if (i < data.text.length) {
-        setDisplayedText((prev) => prev + data.text.charAt(i));
+        setDisplayedText(data.text.substring(0, i + 1));
         i++;
       } else {
         clearInterval(interval);
